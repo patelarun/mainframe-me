@@ -5,9 +5,8 @@ const Hero = () => {
   return (
     <section
       className="h-screen flex flex-col items-center justify-center text-center bg-cover bg-center bg-no-repeat relative"
-      style={{ backgroundImage: "url('/car_tool.jpg')" }} // Update with the actual image path
+      style={{ backgroundImage: "url('/car_tool.jpg')" }}
     >
-      {/* Overlay for better readability */}
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
       <motion.div
@@ -24,7 +23,7 @@ const Hero = () => {
         </p>
         <a
           href="#contact"
-          className="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+          className="mt-6 inline-block bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition"
         >
           Get in Touch
         </a>

@@ -15,7 +15,7 @@ const Contact = () => {
       <p className="mt-4 text-gray-600">Reach out to me via LinkedIn or GitHub.</p>
       <a
         href="https://www.linkedin.com/in/arunpwrk/"
-        className="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+        className="mt-6 inline-block bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition"
       >
         Contact Me
       </a>

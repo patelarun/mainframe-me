@@ -11,10 +11,8 @@ const Header = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="container mx-auto flex justify-between items-center py-4 px-8">
-        <Link href="/">
-          <h1 className="text-2xl font-bold text-gray-900 hover:text-gray-600 transition">
-            Arun Patel
-          </h1>
+        <Link href="/" className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 tracking-wide">
+          {'<ArunPatel />'}
         </Link>
         <nav className="hidden md:flex space-x-6">
           <Link href="#about" className="text-gray-700 hover:text-gray-900 transition">About</Link>
