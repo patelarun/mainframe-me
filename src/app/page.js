@@ -1,8 +1,17 @@
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Experience from "../components/Experience";
+import Skills from "../components/Skills";
+import Contact from "../components/Contact";
+
 export default function Home() {
   return (
-    <section>
-      <h1 className="text-4xl font-bold">Welcome to My Portfolio</h1>
-      <p className="mt-4 text-gray-600">Explore my projects and blogs.</p>
-    </section>
+    <main className="pt-16">
+      <Hero />
+      <About />
+      <Experience />
+      <Skills />
+      <Contact />
+    </main>
   );
 }
