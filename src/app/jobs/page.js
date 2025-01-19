@@ -1,6 +1,48 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
+import FrontendJobDescriptionDialog from "@/components/FrontendJobDescriptionDialog/index";
+
+const mailTo = `mailto:jobb@birdvision.se?subject=Frontend Developer Application&body=${encodeURIComponent(
+    `Dear Hiring Team,
+
+I am interested in applying for the Frontend Developer position.
+
+🔗 Portfolio: 
+📌 Work References: 
+
+🕒 Can work fixed time schedule: 
+🏡 Work-from-home setup available: 
+
+💻 Experience:
+- JavaScript: 
+- ReactJS: 
+- ReduxJS: 
+
+I have attached my resume. Looking forward to your response.
+
+Best regards,
+[Your Name]
+[Your Contact Information]
+`)}`;
 
 export default function JobsPage() {
+	const [showJobDescription, setShowJobDescription] = useState(false);
+
+	const onClickJobListItem = (event) => {
+		event.stopPropagation();
+		setShowJobDescription(true);
+	}
+
+	const onCloseJobDescription = () => {
+		setShowJobDescription(false);
+	}
+
+	const onClickApplyNow = (event) => {
+		event.stopPropagation();
+		window.open(mailTo, '_blank');
+	}
+
   return (
     <div className="pt-24 px-8">
       <div className="max-w-4xl mx-auto">
@@ -11,7 +53,7 @@ export default function JobsPage() {
             Looking for exciting opportunities? Here are some positions we're currently hiring for:
           </p>
           
-          <div className="w-full bg-white shadow-md rounded-lg p-4">
+          <div className="w-full bg-white shadow-md rounded-lg p-4 cursor-pointer" onClick={onClickJobListItem}>
           	<div className="flex items-center space-x-2">
               <Image src="/birdvision_logo.jpg" alt="Company Logo" width={50} height={50} className="rounded-full" />
 							<div>
@@ -35,15 +77,18 @@ export default function JobsPage() {
 								</div>
 
 								<div>
-									<a href="#" className="inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
+									<button onClick={onClickApplyNow} className="inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
 										Apply Now
-									</a>
+									</button>
 								</div>
 							</div>
 						</div>
 					</div>
         </div>
       </div>
+
+			<FrontendJobDescriptionDialog open={showJobDescription} onClose={onCloseJobDescription} onApplyNow={onClickApplyNow} />
     </div>
   );
 }
+
